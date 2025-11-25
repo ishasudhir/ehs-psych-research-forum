@@ -1,68 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Psych Research Forum</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="hamburger" onclick="toggleMenu()">
-      ☰
+  <header class="topbar">
+    <button class="menu-btn" id="hamburger" aria-label="Open menu">☰</button>
+    <button class="home-btn" id="homeBtn" title="Home">🏠 Home</button>
+    <div class="brand">
+      <h1>Psych Research Forum</h1>
     </div>
-    <nav id="sideMenu" class="side-menu">
-      <a href="#home">Home</a>
-      <a href="#calendar">Calendar</a>
-      <a href="#team">Meet the Team</a>
-      <a href="#books">Book List</a>
-      <a href="#forum">Research Forum</a>
-      <a href="#join">Join our Canvas</a>
-    </nav>
   </header>
 
-  <section id="home" class="section">
-    <h1>Psychology Research Forum</h1>
-    <p>Welcome to our club's research forum. Explore projects, books, events, and more.</p>
-  </section>
+  <nav id="sideMenu" class="side-menu" aria-hidden="true">
+    <a class="nav-link" href="#home" data-close>Home</a>
+    <a class="nav-link" href="#calendar" data-close>Calendar</a>
+    <a class="nav-link" href="#team" data-close>Meet the Team</a>
+    <a class="nav-link" href="#books" data-close>Book List</a>
+    <a class="nav-link" href="#forum" data-close>Research Forum</a>
+    <a class="nav-link" href="#join" data-close>Join our Canvas</a>
+  </nav>
 
-  <section id="calendar" class="section">
-    <h2>Calendar</h2>
-    <div id="calendarContainer"></div>
-  </section>
+  <main class="main">
+    <section id="home" class="section hero">
+      <div class="hero-left">
+        <h2>Welcome to our club's research forum</h2>
+        <p class="lead">A place to share findings, discuss methods, and collaborate on psychology projects.</p>
 
-  <section id="team" class="section">
-    <h2>Meet the Team</h2>
-    <div class="team-grid">
-      <div class="team-card">Team Member 1 – Placeholder Bio</div>
-      <div class="team-card">Team Member 2 – Placeholder Bio</div>
-      <div class="team-card">Team Member 3 – Placeholder Bio</div>
+        <div class="quick-buttons">
+          <button class="primary small">📄 Past Meeting Slides</button>
+          <button class="outline small">🗂️ Past Events</button>
+          <button class="outline small">📅 Upcoming Events</button>
+          <button class="outline small">📚 Psych Reading List</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card stats">
+          <div class="stat">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M3 13h4v-6H3v6zm6 6h4V7h-4v12zm6 0h4v-9h-4v9z"/></svg>
+            <div>
+              <div class="num">24</div>
+              <div class="label">Active Projects</div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM2 20a10 10 0 1 1 20 0H2z"/></svg>
+            <div>
+              <div class="num">128</div>
+              <div class="label">Members</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar" class="section">
+      <h2>Calendar</h2>
+      <p class="muted">Click a date to see / add a quick note. Scroll to view months.</p>
+      <div id="calendarContainer" class="calendar-container" aria-live="polite"></div>
+    </section>
+
+    <section id="team" class="section">
+      <h2>Meet the Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="avatar">I</div>
+          <div class="info"><strong>Isha</strong><span>President — Research Lead</span></div>
+        </div>
+        <div class="team-card">
+          <div class="avatar">A</div>
+          <div class="info"><strong>Abbi</strong><span>VP — Events</span></div>
+        </div>
+        <div class="team-card">
+          <div class="avatar">B</div>
+          <div class="info"><strong>Ben</strong><span>Outreach</span></div>
+        </div>
+        <div class="team-card">
+          <div class="avatar">H</div>
+          <div class="info"><strong>Harini</strong><span>Data & Methods</span></div>
+        </div>
+        <div class="team-card">
+          <div class="avatar">E</div>
+          <div class="info"><strong>Elissa</strong><span>Communications</span></div>
+        </div>
+        <div class="team-card">
+          <div class="avatar">G</div>
+          <div class="info"><strong>Gianna</strong><span>Design</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="books" class="section">
+      <h2>Book List</h2>
+      <ul class="book-list">
+        <li>Introduction to Psychology — Placeholder</li>
+        <li>Research Methods in Psychology — Placeholder</li>
+        <li>Statistics for Behavioral Sciences — Placeholder</li>
+      </ul>
+    </section>
+
+    <section id="forum" class="section">
+      <h2>Research Forum</h2>
+      <div class="post-panel">
+        <textarea id="postInput" placeholder="Write a post..."></textarea>
+        <div class="post-actions">
+          <button class="primary" id="publishBtn">Publish</button>
+          <div class="small muted">Posts are stored locally in your browser for now.</div>
+        </div>
+      </div>
+
+      <div id="posts" class="posts"></div>
+    </section>
+
+    <section id="join" class="section">
+      <h2>Join Us</h2>
+      <p>Want to be part of the club? Click below to join our Canvas class (placeholder link).</p>
+      <a class="join-button" href="#" role="button">Join our Canvas</a>
+    </section>
+  </main>
+
+  <!-- modal for calendar day -->
+  <div id="dayModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="closeModal" aria-label="Close">✕</button>
+      <h3 id="modalDate">Date</h3>
+      <textarea id="modalNote" placeholder="Add a quick note (local only)"></textarea>
+      <div class="modal-actions">
+        <button id="saveNote" class="primary small">Save</button>
+        <button id="deleteNote" class="outline small">Delete</button>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <section id="books" class="section">
-    <h2>Book List</h2>
-    <ul>
-      <li>Book Title 1 – Placeholder</li>
-      <li>Book Title 2 – Placeholder</li>
-      <li>Book Title 3 – Placeholder</li>
-    </ul>
-  </section>
-
-  <section id="forum" class="section">
-    <h2>Research Forum</h2>
-    <div id="postForm">
-      <textarea id="postInput" placeholder="Write a post..."></textarea>
-      <button onclick="publishPost()">Publish</button>
-    </div>
-    <div id="posts"></div>
-  </section>
-
-  <section id="join" class="section">
-    <h2>Join Us</h2>
-    <a class="join-button" href="#">Join our Canvas</a>
-  </section>
-
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
