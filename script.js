@@ -205,7 +205,7 @@ let posts = JSON.parse(localStorage.getItem(POSTS_KEY) || '[]');
 function renderPosts(){
   postsEl.innerHTML = '';
   if(posts.length === 0){
-    postsEl.innerHTML = '<div class="muted">No posts yet — start the discussion!</div>';
+    postsEl.innerHTML = '<div class="muted">No posts yet, help us start the discussion!</div>';
     return;
   }
   posts.slice().reverse().forEach((p, idx) => {
