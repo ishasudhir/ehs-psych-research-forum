@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+header {
+  background-color: #8b0000;
+  color: white;
+  padding: 10px;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.side-menu {
+  width: 200px;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: -200px;
+  padding-top: 50px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.side-menu a {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+.side-menu a:hover {
+  background-color: #8b0000;
+}
+
+.section {
+  margin-left: 20px;
+  padding: 20px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.team-card {
+  padding: 20px;
+  background: #f2f2f2;
+  border-left: 5px solid #8b0000;
+}
+
+.join-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #8b0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#postForm textarea {
+  width: 80%;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+#posts .post {
+  padding: 15px;
+  background: #f8f8f8;
+  margin: 10px 0;
+  border-left: 5px solid #8b0000;
+}
+
+.like-btn {
+  cursor: pointer;
+  color: #8b0000;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psych Research Forum</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+    <nav id="sideMenu" class="side-menu">
+      <a href="#home">Home</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#team">Meet the Team</a>
+      <a href="#books">Book List</a>
+      <a href="#forum">Research Forum</a>
+      <a href="#join">Join our Canvas</a>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <h1>Psychology Research Forum</h1>
+    <p>Welcome to our club's research forum. Explore projects, books, events, and more.</p>
+  </section>
+
+  <section id="calendar" class="section">
+    <h2>Calendar</h2>
+    <div id="calendarContainer"></div>
+  </section>
+
+  <section id="team" class="section">
+    <h2>Meet the Team</h2>
+    <div class="team-grid">
+      <div class="team-card">Team Member 1 – Placeholder Bio</div>
+      <div class="team-card">Team Member 2 – Placeholder Bio</div>
+      <div class="team-card">Team Member 3 – Placeholder Bio</div>
+    </div>
+  </section>
+
+  <section id="books" class="section">
+    <h2>Book List</h2>
+    <ul>
+      <li>Book Title 1 – Placeholder</li>
+      <li>Book Title 2 – Placeholder</li>
+      <li>Book Title 3 – Placeholder</li>
+    </ul>
+  </section>
+
+  <section id="forum" class="section">
+    <h2>Research Forum</h2>
+    <div id="postForm">
+      <textarea id="postInput" placeholder="Write a post..."></textarea>
+      <button onclick="publishPost()">Publish</button>
+    </div>
+    <div id="posts"></div>
+  </section>
+
+  <section id="join" class="section">
+    <h2>Join Us</h2>
+    <a class="join-button" href="#">Join our Canvas</a>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
